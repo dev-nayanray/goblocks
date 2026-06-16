@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goblocks/shape",
+	"version": "1.0.0",
+	"title": "Shape Divider",
+	"category": "design",
+	"icon": "image-flip-horizontal",
+	"description": "SVG shape divider — 12 preset shapes with color, height, flip, and responsive height controls.",
+	"keywords": [ "shape", "divider", "separator", "wave", "svg", "section" ],
+	"textdomain": "goblocks",
+	"supports": {
+		"html":            false,
+		"customClassName": false,
+		"className":       false,
+		"anchor":          false
+	},
+	"attributes": {
+		"uniqueId":      { "type": "string",  "default": "" },
+		"shapeSlug":     { "type": "string",  "default": "wave" },
+		"fillColor":     { "type": "string",  "default": "#ffffff" },
+		"shapeHeight":   { "type": "number",  "default": 80 },
+		"flipX":         { "type": "boolean", "default": false },
+		"flipY":         { "type": "boolean", "default": false },
+		"placement":     { "type": "string",  "default": "bottom" },
+		"styles":        { "type": "object",  "default": {} },
+		"globalClasses": { "type": "array",   "items": { "type": "string" }, "default": [] },
+		"generatedCss":  { "type": "string",  "default": "" },
+		"blockVersion":  { "type": "integer", "default": 1 }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle":  "file:./index.css",
+	"render":       "file:./render.php"
+}

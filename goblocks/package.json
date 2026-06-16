@@ -1,0 +1,55 @@
+{
+  "name": "goblocks",
+  "version": "1.0.0",
+  "description": "GoBlocks – Gutenberg Blocks Anywhere",
+  "private": true,
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:js": "wp-scripts lint-js src/",
+    "lint:types": "tsc --noEmit",
+    "lint:css": "wp-scripts lint-style src/",
+    "lint:php": "composer run phpcs",
+    "format": "wp-scripts format src/",
+    "test:unit": "wp-scripts test-unit-js",
+    "test:e2e": "playwright test",
+    "test:php": "composer run phpunit",
+    "i18n:pot": "wp i18n make-pot . languages/goblocks.pot --exclude=node_modules,vendor,build,tests",
+    "package": "npm run build && composer install --no-dev --optimize-autoloader",
+    "wp-env:start": "wp-env start",
+    "wp-env:stop": "wp-env stop",
+    "wp-env:clean": "wp-env clean"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.0.0",
+    "clsx": "^2.1.0",
+    "colord": "^2.9.3",
+    "date-fns": "^3.6.0",
+    "dompurify": "^3.1.0",
+    "uuid": "^9.0.1",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/dompurify": "^3.0.5",
+    "@types/react": "^18.3.31",
+    "@types/uuid": "^9.0.8",
+    "@wordpress/e2e-test-utils-playwright": "^0.22.0",
+    "@wordpress/env": "^10.0.0",
+    "@wordpress/icons": "^14.0.0",
+    "@wordpress/scripts": "^27.9.0",
+    "typescript": "^5.4.0",
+    "webpack-remove-empty-scripts": "^1.0.4"
+  },
+  "wp-env": {
+    "core": null,
+    "plugins": [
+      "."
+    ],
+    "themes": [
+      "https://downloads.wordpress.org/theme/twentytwentyfour.latest-stable.zip"
+    ],
+    "port": 8888,
+    "testsPort": 8889
+  }
+}

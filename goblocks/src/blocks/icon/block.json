@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goblocks/icon",
+	"version": "1.0.0",
+	"title": "Icon",
+	"category": "media",
+	"icon": "star-filled",
+	"description": "Standalone SVG icon — choose from 250+ Tabler icons or paste a custom SVG.",
+	"keywords": [ "icon", "svg", "symbol", "logo", "pictogram" ],
+	"textdomain": "goblocks",
+	"supports": {
+		"html":            false,
+		"customClassName": false,
+		"className":       false,
+		"anchor":          false
+	},
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"uniqueId":       { "type": "string",  "default": "" },
+		"iconSlug":       { "type": "string",  "default": "star" },
+		"svgContent":     { "type": "string",  "default": "" },
+		"iconSize":       { "type": "number",  "default": 32 },
+		"ariaHidden":     { "type": "boolean", "default": true },
+		"ariaLabel":      { "type": "string",  "default": "" },
+		"link":           { "type": "string",  "default": "" },
+		"linkTarget":     { "type": "string",  "default": "_self" },
+		"linkRel":        { "type": "string",  "default": "" },
+		"styles":         { "type": "object",  "default": {} },
+		"globalClasses":  { "type": "array",   "items": { "type": "string" }, "default": [] },
+		"htmlAttributes": { "type": "object",  "default": {} },
+		"generatedCss":   { "type": "string",  "default": "" },
+		"blockVersion":   { "type": "integer", "default": 1 }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle":  "file:./index.css",
+	"render":       "file:./render.php"
+}

@@ -1,0 +1,317 @@
+/**
+ * GoBlocks Design Token System
+ *
+ * Tier 1 — Primitive tokens   (raw values, never used in markup directly)
+ * Tier 2 — Semantic tokens    (meaningful aliases, used by components)
+ *
+ * All block-component tokens (--gb-{block}-*) live in block stylesheets.
+ *
+ * @package GoBlocks
+ */
+
+/* ============================================================================
+   TIER 1 — PRIMITIVE COLOR PALETTE
+   ============================================================================ */
+
+:root {
+	/* Neutral */
+	--gb-primitive-neutral-0:   #ffffff;
+	--gb-primitive-neutral-50:  #f9fafb;
+	--gb-primitive-neutral-100: #f3f4f6;
+	--gb-primitive-neutral-200: #e5e7eb;
+	--gb-primitive-neutral-300: #d1d5db;
+	--gb-primitive-neutral-400: #9ca3af;
+	--gb-primitive-neutral-500: #6b7280;
+	--gb-primitive-neutral-600: #4b5563;
+	--gb-primitive-neutral-700: #374151;
+	--gb-primitive-neutral-800: #1f2937;
+	--gb-primitive-neutral-900: #111827;
+	--gb-primitive-neutral-950: #030712;
+
+	/* Blue */
+	--gb-primitive-blue-50:  #eff6ff;
+	--gb-primitive-blue-100: #dbeafe;
+	--gb-primitive-blue-200: #bfdbfe;
+	--gb-primitive-blue-300: #93c5fd;
+	--gb-primitive-blue-400: #60a5fa;
+	--gb-primitive-blue-500: #3b82f6;
+	--gb-primitive-blue-600: #2563eb;
+	--gb-primitive-blue-700: #1d4ed8;
+	--gb-primitive-blue-800: #1e40af;
+	--gb-primitive-blue-900: #1e3a8a;
+
+	/* Green */
+	--gb-primitive-green-50:  #f0fdf4;
+	--gb-primitive-green-500: #22c55e;
+	--gb-primitive-green-600: #16a34a;
+	--gb-primitive-green-700: #15803d;
+	--gb-primitive-green-900: #14532d;
+
+	/* Red */
+	--gb-primitive-red-50:  #fef2f2;
+	--gb-primitive-red-500: #ef4444;
+	--gb-primitive-red-600: #dc2626;
+	--gb-primitive-red-700: #b91c1c;
+
+	/* Yellow / Amber */
+	--gb-primitive-amber-50:  #fffbeb;
+	--gb-primitive-amber-500: #f59e0b;
+	--gb-primitive-amber-600: #d97706;
+	--gb-primitive-amber-700: #b45309;
+
+	/* Purple */
+	--gb-primitive-purple-50:  #faf5ff;
+	--gb-primitive-purple-500: #a855f7;
+	--gb-primitive-purple-600: #9333ea;
+	--gb-primitive-purple-700: #7e22ce;
+
+	/* Cyan / Sky */
+	--gb-primitive-sky-50:  #f0f9ff;
+	--gb-primitive-sky-500: #0ea5e9;
+	--gb-primitive-sky-600: #0284c7;
+	--gb-primitive-sky-700: #0369a1;
+}
+
+/* ============================================================================
+   TIER 2 — SEMANTIC COLOR TOKENS
+   ============================================================================ */
+
+:root {
+	/* ── Brand ──────────────────────────────────────────────────────────── */
+	--gb-color-primary:         var(--gb-primitive-blue-600);
+	--gb-color-primary-hover:   var(--gb-primitive-blue-700);
+	--gb-color-primary-active:  var(--gb-primitive-blue-800);
+	--gb-color-primary-light:   var(--gb-primitive-blue-50);
+	--gb-color-secondary:       var(--gb-primitive-neutral-700);
+	--gb-color-secondary-hover: var(--gb-primitive-neutral-800);
+	--gb-color-accent:          var(--gb-primitive-blue-500);
+
+	/* ── Surfaces ───────────────────────────────────────────────────────── */
+	--gb-color-surface:         var(--gb-primitive-neutral-0);
+	--gb-color-surface-raised:  var(--gb-primitive-neutral-50);
+	--gb-color-surface-overlay: var(--gb-primitive-neutral-100);
+	--gb-color-surface-inverse: var(--gb-primitive-neutral-900);
+
+	/* ── Text ───────────────────────────────────────────────────────────── */
+	--gb-color-text:            var(--gb-primitive-neutral-900);
+	--gb-color-text-muted:      var(--gb-primitive-neutral-500);
+	--gb-color-text-subtle:     var(--gb-primitive-neutral-400);
+	--gb-color-text-inverse:    var(--gb-primitive-neutral-0);
+	--gb-color-text-on-primary: var(--gb-primitive-neutral-0);
+
+	/* ── Borders ────────────────────────────────────────────────────────── */
+	--gb-color-border:          var(--gb-primitive-neutral-200);
+	--gb-color-border-strong:   var(--gb-primitive-neutral-400);
+	--gb-color-border-focus:    var(--gb-primitive-blue-500);
+
+	/* ── Feedback ───────────────────────────────────────────────────────── */
+	--gb-color-success:         var(--gb-primitive-green-600);
+	--gb-color-success-light:   var(--gb-primitive-green-50);
+	--gb-color-warning:         var(--gb-primitive-amber-600);
+	--gb-color-warning-light:   var(--gb-primitive-amber-50);
+	--gb-color-danger:          var(--gb-primitive-red-600);
+	--gb-color-danger-light:    var(--gb-primitive-red-50);
+	--gb-color-info:            var(--gb-primitive-sky-600);
+	--gb-color-info-light:      var(--gb-primitive-sky-50);
+}
+
+/* ============================================================================
+   TYPOGRAPHY TOKENS
+   ============================================================================ */
+
+:root {
+	/* ── Font Families ──────────────────────────────────────────────────── */
+	--gb-font-sans:    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	--gb-font-serif:   Georgia, "Times New Roman", Times, serif;
+	--gb-font-mono:    "Fira Code", "Cascadia Code", Consolas, "Courier New", monospace;
+	--gb-font-heading: var(--gb-font-sans);
+	--gb-font-body:    var(--gb-font-sans);
+
+	/* ── Font Size Scale (Major Third — 1.25× ratio) ────────────────────── */
+	--gb-text-2xs:  0.625rem;   /*  10px */
+	--gb-text-xs:   0.75rem;    /*  12px */
+	--gb-text-sm:   0.875rem;   /*  14px */
+	--gb-text-base: 1rem;       /*  16px */
+	--gb-text-lg:   1.125rem;   /*  18px */
+	--gb-text-xl:   1.25rem;    /*  20px */
+	--gb-text-2xl:  1.5rem;     /*  24px */
+	--gb-text-3xl:  1.875rem;   /*  30px */
+	--gb-text-4xl:  2.25rem;    /*  36px */
+	--gb-text-5xl:  3rem;       /*  48px */
+	--gb-text-6xl:  3.75rem;    /*  60px */
+	--gb-text-7xl:  4.5rem;     /*  72px */
+	--gb-text-8xl:  6rem;       /*  96px */
+	--gb-text-9xl:  8rem;       /* 128px */
+
+	/* ── Font Weight ────────────────────────────────────────────────────── */
+	--gb-weight-thin:       100;
+	--gb-weight-extralight: 200;
+	--gb-weight-light:      300;
+	--gb-weight-normal:     400;
+	--gb-weight-medium:     500;
+	--gb-weight-semibold:   600;
+	--gb-weight-bold:       700;
+	--gb-weight-extrabold:  800;
+	--gb-weight-black:      900;
+
+	/* ── Line Height ────────────────────────────────────────────────────── */
+	--gb-leading-none:    1;
+	--gb-leading-tight:   1.25;
+	--gb-leading-snug:    1.375;
+	--gb-leading-normal:  1.5;
+	--gb-leading-relaxed: 1.625;
+	--gb-leading-loose:   2;
+
+	/* ── Letter Spacing ─────────────────────────────────────────────────── */
+	--gb-tracking-tighter: -0.05em;
+	--gb-tracking-tight:   -0.025em;
+	--gb-tracking-normal:   0em;
+	--gb-tracking-wide:     0.025em;
+	--gb-tracking-wider:    0.05em;
+	--gb-tracking-widest:   0.1em;
+}
+
+/* ============================================================================
+   SPACING TOKENS (4px base grid)
+   ============================================================================ */
+
+:root {
+	--gb-space-0:    0;
+	--gb-space-px:   1px;
+	--gb-space-0-5:  0.125rem;  /*  2px */
+	--gb-space-1:    0.25rem;   /*  4px */
+	--gb-space-1-5:  0.375rem;  /*  6px */
+	--gb-space-2:    0.5rem;    /*  8px */
+	--gb-space-2-5:  0.625rem;  /* 10px */
+	--gb-space-3:    0.75rem;   /* 12px */
+	--gb-space-3-5:  0.875rem;  /* 14px */
+	--gb-space-4:    1rem;      /* 16px */
+	--gb-space-5:    1.25rem;   /* 20px */
+	--gb-space-6:    1.5rem;    /* 24px */
+	--gb-space-7:    1.75rem;   /* 28px */
+	--gb-space-8:    2rem;      /* 32px */
+	--gb-space-9:    2.25rem;   /* 36px */
+	--gb-space-10:   2.5rem;    /* 40px */
+	--gb-space-11:   2.75rem;   /* 44px */
+	--gb-space-12:   3rem;      /* 48px */
+	--gb-space-14:   3.5rem;    /* 56px */
+	--gb-space-16:   4rem;      /* 64px */
+	--gb-space-20:   5rem;      /* 80px */
+	--gb-space-24:   6rem;      /* 96px */
+	--gb-space-28:   7rem;      /* 112px */
+	--gb-space-32:   8rem;      /* 128px */
+	--gb-space-36:   9rem;      /* 144px */
+	--gb-space-40:   10rem;     /* 160px */
+	--gb-space-48:   12rem;     /* 192px */
+	--gb-space-56:   14rem;     /* 224px */
+	--gb-space-64:   16rem;     /* 256px */
+	--gb-space-72:   18rem;     /* 288px */
+	--gb-space-80:   20rem;     /* 320px */
+	--gb-space-96:   24rem;     /* 384px */
+
+	/* Semantic aliases */
+	--gb-space-xs:  var(--gb-space-2);   /*  8px */
+	--gb-space-sm:  var(--gb-space-4);   /* 16px */
+	--gb-space-md:  var(--gb-space-6);   /* 24px */
+	--gb-space-lg:  var(--gb-space-10);  /* 40px */
+	--gb-space-xl:  var(--gb-space-16);  /* 64px */
+	--gb-space-2xl: var(--gb-space-24);  /* 96px */
+	--gb-space-3xl: var(--gb-space-32);  /* 128px */
+}
+
+/* ============================================================================
+   BORDER RADIUS TOKENS
+   ============================================================================ */
+
+:root {
+	--gb-radius-none:  0;
+	--gb-radius-sm:    0.125rem; /*  2px */
+	--gb-radius-base:  0.25rem;  /*  4px */
+	--gb-radius-md:    0.375rem; /*  6px */
+	--gb-radius-lg:    0.5rem;   /*  8px */
+	--gb-radius-xl:    0.75rem;  /* 12px */
+	--gb-radius-2xl:   1rem;     /* 16px */
+	--gb-radius-3xl:   1.5rem;   /* 24px */
+	--gb-radius-full:  9999px;
+}
+
+/* ============================================================================
+   SHADOW TOKENS
+   ============================================================================ */
+
+:root {
+	--gb-shadow-none:  none;
+	--gb-shadow-xs:    0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--gb-shadow-sm:    0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--gb-shadow-md:    0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	--gb-shadow-lg:    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--gb-shadow-xl:    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+	--gb-shadow-2xl:   0 25px 50px -12px rgb(0 0 0 / 0.25);
+	--gb-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+
+/* ============================================================================
+   Z-INDEX TOKENS
+   ============================================================================ */
+
+:root {
+	--gb-z-0:   0;
+	--gb-z-10:  10;   /* floating elements */
+	--gb-z-20:  20;   /* sticky headers */
+	--gb-z-30:  30;   /* dropdowns */
+	--gb-z-40:  40;   /* tooltips */
+	--gb-z-50:  50;   /* modals */
+	--gb-z-60:  60;   /* popovers over modals */
+	--gb-z-70:  70;   /* toasts */
+	--gb-z-max: 9999; /* critical overlays */
+}
+
+/* ============================================================================
+   CONTAINER WIDTH TOKENS
+   ============================================================================ */
+
+:root {
+	--gb-container-xs:   320px;
+	--gb-container-sm:   576px;
+	--gb-container-md:   768px;
+	--gb-container-lg:   1024px;
+	--gb-container-xl:   1280px;
+	--gb-container-2xl:  1440px;
+	--gb-container-3xl:  1600px;
+	--gb-container-full: 100%;
+	--gb-container-site: var(--gb-container-xl); /* user-configurable via PHP */
+}
+
+/* ============================================================================
+   DARK MODE — Semantic token overrides only
+   Primitive tokens never change; semantic tokens remap to darker primitives.
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--gb-color-surface:         var(--gb-primitive-neutral-900);
+		--gb-color-surface-raised:  var(--gb-primitive-neutral-800);
+		--gb-color-surface-overlay: var(--gb-primitive-neutral-700);
+		--gb-color-surface-inverse: var(--gb-primitive-neutral-0);
+		--gb-color-text:            var(--gb-primitive-neutral-50);
+		--gb-color-text-muted:      var(--gb-primitive-neutral-400);
+		--gb-color-text-subtle:     var(--gb-primitive-neutral-500);
+		--gb-color-text-inverse:    var(--gb-primitive-neutral-900);
+		--gb-color-border:          var(--gb-primitive-neutral-700);
+		--gb-color-border-strong:   var(--gb-primitive-neutral-500);
+	}
+}
+
+/* Manual dark-mode class (user-toggled via JS or body class) */
+.gb-dark-mode {
+	--gb-color-surface:         var(--gb-primitive-neutral-900);
+	--gb-color-surface-raised:  var(--gb-primitive-neutral-800);
+	--gb-color-surface-overlay: var(--gb-primitive-neutral-700);
+	--gb-color-surface-inverse: var(--gb-primitive-neutral-0);
+	--gb-color-text:            var(--gb-primitive-neutral-50);
+	--gb-color-text-muted:      var(--gb-primitive-neutral-400);
+	--gb-color-text-subtle:     var(--gb-primitive-neutral-500);
+	--gb-color-text-inverse:    var(--gb-primitive-neutral-900);
+	--gb-color-border:          var(--gb-primitive-neutral-700);
+	--gb-color-border-strong:   var(--gb-primitive-neutral-500);
+}

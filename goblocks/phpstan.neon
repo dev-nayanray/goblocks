@@ -1,0 +1,35 @@
+includes:
+    # Incremental baseline — add entries here when suppressing pre-existing issues
+    - phpstan-baseline.neon
+
+parameters:
+    level: 6
+
+    paths:
+        - goblocks.php
+        - uninstall.php
+        - includes/
+
+    excludePaths:
+        - vendor/
+        - node_modules/
+        - build/
+        - tests/
+
+    # WordPress stubs for type analysis
+    bootstrapFiles:
+        - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+        - phpstan-bootstrap.php
+
+    # Don't fail on missing iterable value types (common in WP arrays)
+    checkMissingIterableValueType: false
+
+    # Relax overly strict PHPDoc type assertions
+    treatPhpDocTypesAsCertain: false
+
+    # Allow nullable return types without explicit null in all paths
+    checkImplicitMixed: false
+
+    ignoreErrors:
+        # Singleton::get_instance() uses new static() which is safe for singleton subclasses.
+        - '#Unsafe usage of new static\(\)#'

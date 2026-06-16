@@ -1,0 +1,684 @@
+/**
+ * GoBlocks Block Editor Inspector Styles
+ *
+ * "Precision Studio" identity for the block sidebar:
+ *  - §6.6 Inspector Tabs (dark frame, white panel bodies)
+ *  - §6.7 Breakpoint Device Tabs (sticky, primary accent active)
+ *  - §6.8 Unit Input control
+ *  - §6.9 Toggle Group control
+ *
+ * Enqueued with the block editor (enqueue_block_editor_assets).
+ * No !important — all overrides rely on specificity.
+ *
+ * @package GoBlocks
+ */
+
+/* ============================================================================
+   §6.6 — Inspector Tabs
+   ============================================================================ */
+
+.gb-inspector-tabs {
+	display: flex;
+	flex-direction: column;
+}
+
+/* WP renders TabPanel's tab list as a div[role=tablist] */
+.gb-inspector-tabs > .components-tab-panel__tabs {
+	display: flex;
+	background: var(--gb-color-surface-inverse, #111827);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 0;
+	margin: 0;
+}
+
+.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item {
+	flex: 1;
+	padding: var(--gb-space-2, 0.5rem) var(--gb-space-1, 0.25rem);
+	font-size: var(--gb-text-xs, 0.75rem);
+	font-weight: var(--gb-weight-medium, 500);
+	color: rgba(255, 255, 255, 0.55);
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid transparent;
+	cursor: pointer;
+	text-align: center;
+	transition: color 150ms ease-in-out, border-color 150ms ease-in-out;
+	min-height: 36px;
+}
+
+.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item:hover {
+	color: rgba(255, 255, 255, 0.85);
+	background: transparent;
+	box-shadow: none;
+}
+
+.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item.is-active {
+	color: #ffffff;
+	font-weight: var(--gb-weight-semibold, 600);
+	border-bottom-color: var(--gb-color-primary, #2563eb);
+	background: transparent;
+}
+
+.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item:focus:not(:disabled) {
+	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Panel body (opens into white) */
+.gb-inspector-tabs > .components-tab-panel__tab-content,
+.gb-inspector-tabs__panel {
+	background: var(--gb-color-surface, #fff);
+	min-height: 0;
+}
+
+/* Dark mode: surface-inverse becomes white; flip text to dark */
+@media (prefers-color-scheme: dark) {
+	.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item {
+		color: rgba(0, 0, 0, 0.55);
+	}
+
+	.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item:hover {
+		color: rgba(0, 0, 0, 0.85);
+	}
+
+	.gb-inspector-tabs > .components-tab-panel__tabs .components-tab-panel__tabs-item.is-active {
+		color: var(--gb-color-text, #111827);
+	}
+}
+
+/* ============================================================================
+   §6.7 — Breakpoint Device Tabs
+   ============================================================================ */
+
+.gb-breakpoint-tabs {
+	position: sticky;
+	top: 0;
+	z-index: var(--gb-z-10, 10);
+	display: flex;
+	background: var(--gb-color-surface-raised, #f9fafb);
+	border-bottom: 1px solid var(--gb-color-border, #e5e7eb);
+	padding: 0;
+}
+
+.gb-breakpoint-tabs__tab {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--gb-space-2, 0.5rem);
+	min-height: 32px;
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid transparent;
+	color: var(--gb-color-text-muted, #6b7280);
+	cursor: pointer;
+	transition: color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+}
+
+.gb-breakpoint-tabs__tab:hover {
+	color: var(--gb-color-text, #111827);
+	background: var(--gb-color-surface-overlay, #f3f4f6);
+}
+
+.gb-breakpoint-tabs__tab--active {
+	color: var(--gb-color-primary, #2563eb);
+	border-bottom-color: var(--gb-color-primary, #2563eb);
+	background: var(--gb-color-surface, #fff);
+}
+
+.gb-breakpoint-tabs__tab svg {
+	width: 16px;
+	height: 16px;
+	display: block;
+	fill: currentColor;
+}
+
+/* ============================================================================
+   §6.8 — Unit Input Control
+   ============================================================================ */
+
+.gb-unit-input {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gb-space-1, 0.25rem);
+}
+
+.gb-unit-input__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.gb-unit-input__label {
+	font-size: var(--gb-text-xs, 0.75rem);
+	font-weight: var(--gb-weight-medium, 500);
+	color: var(--gb-color-text-muted, #6b7280);
+	line-height: 1;
+}
+
+.gb-unit-input__reset {
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+	padding: 0;
+	min-height: unset;
+	height: auto;
+	line-height: 1;
+}
+
+.gb-unit-input:hover .gb-unit-input__reset,
+.gb-unit-input:focus-within .gb-unit-input__reset {
+	opacity: 1;
+}
+
+.gb-unit-input__row {
+	display: flex;
+	gap: var(--gb-space-1, 0.25rem);
+	align-items: stretch;
+}
+
+.gb-unit-input__number {
+	flex: 1;
+	min-width: 0;
+}
+
+.gb-unit-input__number .components-base-control,
+.gb-unit-input__number .components-base-control__field {
+	margin-bottom: 0;
+}
+
+.gb-unit-input__unit {
+	width: 56px;
+	flex-shrink: 0;
+}
+
+.gb-unit-input__unit .components-base-control,
+.gb-unit-input__unit .components-base-control__field {
+	margin-bottom: 0;
+}
+
+.gb-unit-input__help {
+	font-size: var(--gb-text-2xs, 0.625rem);
+	color: var(--gb-color-text-subtle, #9ca3af);
+	line-height: var(--gb-leading-normal, 1.5);
+}
+
+/* ============================================================================
+   §6.9 — Toggle Group Control
+   ============================================================================ */
+
+.gb-toggle-group {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gb-space-1, 0.25rem);
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.gb-toggle-group__legend {
+	font-size: var(--gb-text-xs, 0.75rem);
+	font-weight: var(--gb-weight-medium, 500);
+	color: var(--gb-color-text-muted, #6b7280);
+	margin-bottom: var(--gb-space-1, 0.25rem);
+	float: none;
+	width: 100%;
+	padding: 0;
+}
+
+.gb-toggle-group__options {
+	display: flex;
+	gap: 1px;
+	background: var(--gb-color-border, #e5e7eb);
+	border-radius: var(--gb-radius-base, 0.25rem);
+	overflow: hidden;
+}
+
+.gb-toggle-group__btn {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--gb-space-1-5, 0.375rem) var(--gb-space-2, 0.5rem);
+	font-size: var(--gb-text-xs, 0.75rem);
+	font-weight: var(--gb-weight-medium, 500);
+	background: var(--gb-color-surface, #fff);
+	color: var(--gb-color-text-muted, #6b7280);
+	border: none;
+	cursor: pointer;
+	min-height: 28px;
+	transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+	line-height: 1;
+}
+
+.gb-toggle-group__btn:hover {
+	background: var(--gb-color-surface-overlay, #f3f4f6);
+	color: var(--gb-color-text, #111827);
+}
+
+.gb-toggle-group__btn.is-active {
+	background: var(--gb-color-primary, #2563eb);
+	color: var(--gb-color-text-on-primary, #fff);
+	font-weight: var(--gb-weight-semibold, 600);
+}
+
+.gb-toggle-group__btn svg {
+	width: 14px;
+	height: 14px;
+	display: block;
+	fill: currentColor;
+}
+
+/* ============================================================================
+   Inspector panel padding (all open WP panels inside the GB sidebar)
+   ============================================================================ */
+
+.gb-inspector-tabs__panel .components-panel__body.is-opened > .components-panel__body-contents {
+	padding: var(--gb-space-3, 0.75rem);
+}
+
+/* ============================================================================
+   Shared label system — 11px / 500 / spaced-caps, consistent across all controls
+   ============================================================================ */
+
+.gb-unit-input__label,
+.gb-toggle-group__legend,
+.gb-color-control__label,
+.gb-spacing-control__label,
+.gb-flex-control__label,
+.gb-font-control__label,
+.gb-gradient-control__label,
+.gb-shadow-control__label,
+.gb-dimensions-control__section-label {
+	font-size: 11px;
+	font-weight: var(--gb-weight-medium, 500);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--gb-color-text-muted, #6b7280);
+	line-height: 1;
+}
+
+/* Shared header row: label left, action right */
+.gb-spacing-control__header,
+.gb-color-control__header,
+.gb-flex-control__header,
+.gb-font-control__header,
+.gb-shadow-control__header,
+.gb-gradient-control__stops-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 24px;
+	margin-bottom: var(--gb-space-1-5, 0.375rem);
+}
+
+/* Standardise all control containers to consistent vertical rhythm */
+.gb-unit-input,
+.gb-color-control,
+.gb-spacing-control,
+.gb-flex-control,
+.gb-font-control,
+.gb-gradient-control,
+.gb-shadow-control,
+.gb-dimensions-control {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gb-space-1-5, 0.375rem);
+}
+
+/* Thin separator between stacked controls inside a panel */
+.gb-spacing-control + .gb-spacing-control,
+.gb-flex-control + .gb-flex-control {
+	border-top: 1px solid var(--gb-color-border, #e5e7eb);
+	padding-top: var(--gb-space-3, 0.75rem);
+	margin-top: var(--gb-space-1, 0.25rem);
+}
+
+/* ============================================================================
+   §6.8-r — UnitInput group border (refine existing)
+   ============================================================================ */
+
+.gb-unit-input__row {
+	display: flex;
+	align-items: stretch;
+	border: 1px solid var(--gb-color-border, #e5e7eb);
+	border-radius: var(--gb-radius-base, 0.25rem);
+	overflow: hidden;
+	transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
+
+.gb-unit-input__row:focus-within {
+	border-color: var(--gb-color-primary, #2563eb);
+	box-shadow: 0 0 0 2px var(--gb-color-primary-alpha, rgba(37,99,235,0.15));
+}
+
+.gb-unit-input__number {
+	flex: 1;
+	min-width: 0;
+	border: none;
+	background: transparent;
+	padding: var(--gb-space-1, 0.25rem) var(--gb-space-2, 0.5rem);
+	font-size: var(--gb-text-sm, 0.875rem);
+	color: var(--gb-color-text, #111827);
+	outline: none;
+	-moz-appearance: textfield;
+}
+
+.gb-unit-input__number::-webkit-inner-spin-button,
+.gb-unit-input__number::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+.gb-unit-input__unit {
+	width: 52px;
+	flex-shrink: 0;
+	border: none;
+	border-left: 1px solid var(--gb-color-border, #e5e7eb);
+	border-radius: 0;
+	background: var(--gb-color-surface-raised, #f9fafb);
+	font-size: var(--gb-text-xs, 0.75rem);
+	color: var(--gb-color-text-muted, #6b7280);
+}
+
+.gb-unit-input__unit .components-base-control,
+.gb-unit-input__unit .components-base-control__field,
+.gb-unit-input__unit select {
+	margin-bottom: 0;
+	border: none;
+	background: transparent;
+	height: 100%;
+}
+
+/* ============================================================================
+   §6.9-r — ToggleGroup overflow fix (refine existing)
+   ============================================================================ */
+
+.gb-toggle-group__btn {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* ============================================================================
+   §6.10 — Spacing Control
+   ============================================================================ */
+
+.gb-spacing-control__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+}
+
+/* When linked: full-width single input */
+.gb-spacing-control > .gb-unit-input {
+	width: 100%;
+}
+
+.gb-spacing-control__link {
+	padding: var(--gb-space-1, 0.25rem);
+	min-height: unset;
+	height: 24px;
+	width: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gb-spacing-control__link svg {
+	width: 14px;
+	height: 14px;
+	fill: currentColor;
+}
+
+.gb-spacing-control--two-axis .gb-spacing-control__inputs {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+}
+
+/* ============================================================================
+   §6.11 — Dimensions Control
+   ============================================================================ */
+
+.gb-dimensions-control__row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+}
+
+.gb-dimensions-control__minmax {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+	padding-top: var(--gb-space-2, 0.5rem);
+	border-top: 1px solid var(--gb-color-border, #e5e7eb);
+	margin-top: var(--gb-space-1, 0.25rem);
+}
+
+.gb-dimensions-control__section-label {
+	grid-column: 1 / -1;
+}
+
+/* ============================================================================
+   §6.12 — Color Control
+   ============================================================================ */
+
+.gb-color-control__palette {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	padding: var(--gb-space-1-5, 0.375rem) 0;
+}
+
+.gb-color-swatch {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	border: 1.5px solid rgba(0, 0, 0, 0.12);
+	cursor: pointer;
+	padding: 0;
+	position: relative;
+	transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+}
+
+.gb-color-swatch::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+	                  linear-gradient(-45deg, #ccc 25%, transparent 25%),
+	                  linear-gradient(45deg, transparent 75%, #ccc 75%),
+	                  linear-gradient(-45deg, transparent 75%, #ccc 75%);
+	background-size: 6px 6px;
+	background-position: 0 0, 0 3px, 3px -3px, -3px 0px;
+	z-index: -1;
+}
+
+.gb-color-swatch:hover {
+	transform: scale(1.15);
+	box-shadow: 0 0 0 2px var(--gb-color-primary, #2563eb);
+}
+
+.gb-color-swatch.is-active {
+	box-shadow: 0 0 0 2px var(--gb-color-primary, #2563eb);
+}
+
+.gb-color-control__row {
+	display: flex;
+	align-items: center;
+	gap: var(--gb-space-2, 0.5rem);
+	border: 1px solid var(--gb-color-border, #e5e7eb);
+	border-radius: var(--gb-radius-base, 0.25rem);
+	padding: var(--gb-space-1, 0.25rem);
+	background: var(--gb-color-surface, #fff);
+	transition: border-color 150ms ease-in-out;
+}
+
+.gb-color-control__row:focus-within {
+	border-color: var(--gb-color-primary, #2563eb);
+	box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.gb-color-control__preview {
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: var(--gb-radius-sm, 0.125rem);
+	border: 1.5px solid rgba(0, 0, 0, 0.12);
+	cursor: pointer;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	min-height: unset;
+}
+
+.gb-color-control__preview::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+	                  linear-gradient(-45deg, #ccc 25%, transparent 25%),
+	                  linear-gradient(45deg, transparent 75%, #ccc 75%),
+	                  linear-gradient(-45deg, transparent 75%, #ccc 75%);
+	background-size: 8px 8px;
+	background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+	z-index: -1;
+}
+
+.gb-color-control__hex {
+	flex: 1;
+	min-width: 0;
+}
+
+.gb-color-control__hex .components-base-control,
+.gb-color-control__hex .components-base-control__field,
+.gb-color-control__hex input {
+	margin-bottom: 0;
+	border: none;
+	box-shadow: none;
+	background: transparent;
+	font-size: var(--gb-text-xs, 0.75rem);
+	font-family: var(--gb-font-mono, monospace);
+	padding: 0;
+	height: auto;
+	min-height: unset;
+}
+
+.gb-color-control__popover .components-popover__content {
+	padding: var(--gb-space-3, 0.75rem);
+}
+
+.gb-color-control__help {
+	font-size: var(--gb-text-2xs, 0.625rem);
+	color: var(--gb-color-text-subtle, #9ca3af);
+}
+
+/* ============================================================================
+   §6.13 — Gradient Control
+   ============================================================================ */
+
+.gb-gradient-control__preview {
+	height: 36px;
+	border-radius: var(--gb-radius-base, 0.25rem);
+	border: 1px solid var(--gb-color-border, #e5e7eb);
+	margin-bottom: var(--gb-space-1, 0.25rem);
+}
+
+.gb-gradient-control__stops {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gb-space-2, 0.5rem);
+	margin-top: var(--gb-space-1, 0.25rem);
+}
+
+.gb-gradient-control__stop {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+	align-items: start;
+	padding: var(--gb-space-2, 0.5rem);
+	background: var(--gb-color-surface-raised, #f9fafb);
+	border-radius: var(--gb-radius-base, 0.25rem);
+	border: 1px solid var(--gb-color-border, #e5e7eb);
+}
+
+.gb-gradient-control__stop .gb-color-control {
+	grid-column: 1 / -1;
+}
+
+.gb-gradient-control__stop > button {
+	grid-column: 1 / -1;
+}
+
+/* ============================================================================
+   §6.14 — Shadow Control
+   ============================================================================ */
+
+.gb-shadow-control__layer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gb-space-2, 0.5rem);
+	padding: var(--gb-space-2, 0.5rem);
+	background: var(--gb-color-surface-raised, #f9fafb);
+	border: 1px solid var(--gb-color-border, #e5e7eb);
+	border-radius: var(--gb-radius-base, 0.25rem);
+	margin-top: var(--gb-space-2, 0.5rem);
+}
+
+.gb-shadow-control__layer-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 11px;
+	font-weight: var(--gb-weight-medium, 500);
+	color: var(--gb-color-text-muted, #6b7280);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.gb-shadow-control__layer-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+}
+
+/* ============================================================================
+   §6.15 — Font Control
+   ============================================================================ */
+
+.gb-font-control__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 24px;
+}
+
+.gb-font-control__label {
+	font-size: 11px;
+	font-weight: var(--gb-weight-medium, 500);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--gb-color-text-muted, #6b7280);
+}
+
+.gb-font-control select,
+.gb-font-control input {
+	font-size: var(--gb-text-sm, 0.875rem);
+}
+
+/* ============================================================================
+   §6.16 — Flex Control
+   ============================================================================ */
+
+.gb-flex-control {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gb-space-3, 0.75rem);
+	padding-top: var(--gb-space-2, 0.5rem);
+	border-top: 1px solid var(--gb-color-border, #e5e7eb);
+}
+
+.gb-flex-control__gap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gb-space-2, 0.5rem);
+}

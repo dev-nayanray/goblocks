@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goblocks/query-no-results",
+	"version": "1.0.0",
+	"title": "No Results",
+	"category": "layout",
+	"icon": "search",
+	"description": "Content inside this block is displayed when the parent Query block returns zero results.",
+	"keywords": [ "no results", "empty", "query", "fallback" ],
+	"textdomain": "goblocks",
+	"ancestor": [ "goblocks/query" ],
+	"usesContext": [ "goblocks/queryId" ],
+	"supports": {
+		"html":            false,
+		"customClassName": false,
+		"className":       false,
+		"anchor":          false
+	},
+	"attributes": {},
+	"editorScript": "file:./index.js"
+}
