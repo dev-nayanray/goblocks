@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goblocks/tabs",
+	"version": "1.0.0",
+	"title": "Tabs",
+	"category": "layout",
+	"icon": "table-col-before",
+	"description": "Accessible tabbed content panels with Arrow / Home / End keyboard navigation.",
+	"keywords": [ "tabs", "tabbed", "panels", "navigation" ],
+	"textdomain": "goblocks",
+	"supports": {
+		"html":            false,
+		"customClassName": false,
+		"className":       false,
+		"anchor":          false
+	},
+	"attributes": {
+		"uniqueId":       { "type": "string",  "default": "" },
+		"tagName":        { "type": "string",  "default": "div" },
+		"styles":         { "type": "object",  "default": {} },
+		"globalClasses":  { "type": "array",   "items": { "type": "string" }, "default": [] },
+		"htmlAttributes": { "type": "object",  "default": {} },
+		"dynamicContent": { "type": "object",  "default": {} },
+		"generatedCss":   { "type": "string",  "default": "" },
+		"blockVersion":   { "type": "integer", "default": 1 },
+		"orientation":    { "type": "string",  "default": "horizontal", "enum": [ "horizontal", "vertical" ] },
+		"defaultTab":     { "type": "integer", "default": 0 }
+	},
+	"providesContext": {
+		"goblocks/tabsId": "uniqueId"
+	},
+	"viewScript": "file:./view.js",
+	"editorScript": "file:./index.js",
+	"editorStyle":  "file:./index.css",
+	"style":        "file:./style-index.css"
+}

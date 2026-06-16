@@ -1,0 +1,80 @@
+# Files and directories excluded from the WordPress.org plugin ZIP.
+# Used by `wp dist-archive` and `npm run package`.
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Agent / editor context
+.claude/
+.vscode/
+.idea/
+
+# Node
+node_modules/
+npm-debug.log*
+.npm
+.npmrc
+
+# PHP dev tools
+vendor/
+composer.lock
+
+# Source files (TypeScript / CSS sources — build/ output is included)
+src/
+
+# Test infrastructure
+tests/
+phpunit.xml
+playwright.config.ts
+playwright-report/
+test-results/
+artifacts/
+
+# Build tooling
+webpack.config.js
+package.json
+package-lock.json
+tsconfig.json
+tsconfig.e2e.json
+
+# PHP linting / analysis config
+phpcs.xml
+phpstan.neon
+phpstan-baseline.neon
+phpstan-result-cache.neon
+phpstan-bootstrap.php
+.phpunit.result.cache
+
+# Environment
+.env
+.env.local
+.wp-env/
+.wp-env.json
+.wp-env.override.json
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# Package scripts
+bin/
+make-zip.js
+
+# CI
+.github/
+
+# Editor / AI context
+CLAUDE.md
+.eslintrc.js
+.eslintrc.json
+.eslintignore
+
+# Misc
+*.zip
+*.tar.gz
+*.log
+*.tsbuildinfo
+*.gitkeep
+.gitkeep

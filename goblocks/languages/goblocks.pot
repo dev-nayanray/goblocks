@@ -1,0 +1,98 @@
+# Copyright (C) 2024 GoBlocks Contributors
+# This file is distributed under the same license as the GoBlocks plugin.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GoBlocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/goblocks\n"
+"POT-Creation-Date: 2024-01-01T00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: WP-CLI 2.x\n"
+"X-Domain: goblocks\n"
+
+#. Plugin Name of the plugin
+msgid "goBlocks – Gutenberg Blocks Anywhere"
+msgstr ""
+
+#. Description of the plugin
+msgid "A world-class Gutenberg block library with a modern design system, responsive controls, dynamic content, and full FSE support."
+msgstr ""
+
+#: includes/Admin/Admin.php
+msgid "GoBlocks"
+msgstr ""
+
+#: includes/Admin/Admin.php
+msgid "Settings"
+msgstr ""
+
+#: includes/Admin/Admin.php
+msgid "GoBlocks Settings"
+msgstr ""
+
+#: includes/GlobalStyles/GlobalStyles.php
+msgid "Global Styles"
+msgstr ""
+
+#: includes/GlobalStyles/GlobalStyles.php
+msgid "GoBlocks Global Styles"
+msgstr ""
+
+#: includes/Patterns/PatternLibrary.php
+msgid "Pattern Library"
+msgstr ""
+
+#: includes/Patterns/PatternLibrary.php
+msgid "Patterns"
+msgstr ""
+
+#: includes/REST/RestController.php
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/Settings/Schema.php
+msgid "Value below minimum."
+msgstr ""
+
+#: includes/Settings/Schema.php
+msgid "Value above maximum."
+msgstr ""
+
+#: includes/Settings/Schema.php
+msgid "Invalid option value."
+msgstr ""
+
+#: includes/REST/SettingsController.php
+msgid "Request body must be a JSON object."
+msgstr ""
+
+#: includes/REST/SettingsController.php
+msgid "Failed to save settings."
+msgstr ""
+
+#: includes/REST/SettingsController.php
+msgid "Settings saved."
+msgstr ""
+
+#: includes/REST/SettingsController.php
+msgid "Settings reset to defaults."
+msgstr ""
+
+#: includes/REST/StylesController.php
+msgid "Invalid CSS."
+msgstr ""
+
+#: includes/REST/StylesController.php
+msgid "CSS saved."
+msgstr ""
+
+#: includes/Blocks/TabPanel.php
+msgid "Tab"
+msgstr ""

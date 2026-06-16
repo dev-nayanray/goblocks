@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goblocks/query-loop",
+	"version": "1.0.0",
+	"title": "Query Loop",
+	"category": "layout",
+	"icon": "loop",
+	"description": "Iterates over query results. Add blocks inside to define the post template.",
+	"keywords": [ "query loop", "post template", "loop", "iteration", "dynamic" ],
+	"textdomain": "goblocks",
+	"parent": [ "goblocks/query" ],
+	"supports": {
+		"html":            false,
+		"customClassName": false,
+		"className":       false,
+		"anchor":          false,
+		"reusable":        false
+	},
+	"usesContext": [
+		"goblocks/queryId",
+		"goblocks/query",
+		"goblocks/paginationType"
+	],
+	"attributes": {
+		"blockVersion": { "type": "integer", "default": 1 }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle":  "file:./index.css",
+	"render":       "file:./render.php"
+}

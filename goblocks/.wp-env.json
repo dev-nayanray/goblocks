@@ -1,0 +1,8 @@
+{
+	"core": "https://downloads.wordpress.org/release/wordpress-6.7.zip",
+	"phpVersion": "8.2",
+	"plugins": [ "." ],
+	"themes": [],
+	"port": 8888,
+	"testsPort": 8889
+}
