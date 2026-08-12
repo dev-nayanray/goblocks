@@ -103,7 +103,7 @@ class Modal extends BlockBase {
 			$trigger,
 			esc_attr( $trigger_text ),
 			esc_attr__( 'Close', 'godevs-blocks' ),
-			$content,
+			wp_kses_post( $content ),
 			$dismiss_html
 		);
 	}

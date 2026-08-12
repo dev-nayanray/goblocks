@@ -58,10 +58,10 @@ class Column extends BlockBase {
 
 		return sprintf(
 			'<%1$s class="%2$s"%3$s>%4$s</%1$s>',
-			$tag_name,
+			esc_attr( $tag_name ),
 			$classes,
 			$html_attrs,
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }

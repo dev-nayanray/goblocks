@@ -73,7 +73,7 @@ class Container extends BlockBase {
 			esc_attr( $tag_name ),
 			$classes,
 			$html_attrs,
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }

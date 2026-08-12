@@ -58,6 +58,6 @@ class QueryNoResults extends BlockBase {
 			return '';
 		}
 
-		return '<div class="gb-query-no-results">' . $content . '</div>';
+		return '<div class="gb-query-no-results">' . wp_kses_post( $content ) . '</div>';
 	}
 }

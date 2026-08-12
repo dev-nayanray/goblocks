@@ -107,7 +107,7 @@ class AccordionItem extends BlockBase {
 			esc_html( $question ),
 			$schema_ans,
 			$schema_text,
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }

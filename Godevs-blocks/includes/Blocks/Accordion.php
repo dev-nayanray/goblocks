@@ -57,7 +57,7 @@ class Accordion extends BlockBase {
 			$allow_multiple ? 'true' : 'false',
 			$schema_attrs,
 			$extra_html_attrs,
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }

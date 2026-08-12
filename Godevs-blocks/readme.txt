@@ -87,7 +87,22 @@ per-page CSS file served as a static asset.
 = Links =
 
 * [Plugin Page](https://godevs.net/godevs-blocks)
-* [Support Forum](https://wordpress.org/support/plugin/godevs-block)
+* [Support Forum](https://wordpress.org/support/plugin/godevs-blocks)
+* [Source Code (GitHub)](https://github.com/godevsltd/godevsblocks)
+
+= Source Code & Build =
+
+The complete, human-readable source code for this plugin — including all TypeScript block source files, SCSS, and build configuration — is publicly available at:
+
+**https://github.com/godevsltd/godevsblocks**
+
+The `build/` directory in the plugin ZIP contains compiled assets generated from the `src/` directory. To regenerate them:
+
+1. Clone the repository: `git clone https://github.com/godevsltd/godevsblocks.git`
+2. Install Node.js dependencies: `npm install`
+3. Build for production: `npm run build`
+
+Build tool: `@wordpress/scripts` (webpack-based). Node.js 18+ and npm 9+ required.
 
 == Installation ==
 

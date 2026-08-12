@@ -67,7 +67,7 @@ class Query extends BlockBase {
 			'<div class="%s"%s>%s</div>',
 			$classes,
 			$html_attrs,
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }

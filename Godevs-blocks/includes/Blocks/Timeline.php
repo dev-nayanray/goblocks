@@ -81,7 +81,7 @@ class Timeline extends BlockBase {
 			esc_attr( $classes ),
 			esc_attr( $css_vars ),
 			$data,
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }

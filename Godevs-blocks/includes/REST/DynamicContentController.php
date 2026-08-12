@@ -27,6 +27,36 @@ defined( 'ABSPATH' ) || exit;
 class DynamicContentController extends RestController {
 
 	/**
+	 * Permission callback for the dynamic-content preview endpoint.
+	 *
+	 * Requires edit_posts globally. When a post_id is supplied in the request,
+	 * also verifies the current user can edit that specific post.
+	 *
+	 * @param \WP_REST_Request $request The incoming REST request.
+	 * @return bool|\WP_Error
+	 */
+	public function can_preview_dynamic_content( \WP_REST_Request $request ): bool|\WP_Error {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			return new \WP_Error(
+				'goblocks_forbidden',
+				__( 'You do not have permission to perform this action.', 'godevs-blocks' ),
+				array( 'status' => rest_authorization_required_code() )
+			);
+		}
+
+		$post_id = absint( $request->get_param( 'post_id' ) );
+		if ( $post_id > 0 && ! current_user_can( 'edit_post', $post_id ) ) {
+			return new \WP_Error(
+				'goblocks_forbidden',
+				__( 'You do not have permission to edit this post.', 'godevs-blocks' ),
+				array( 'status' => rest_authorization_required_code() )
+			);
+		}
+
+		return true;
+	}
+
+	/**
 	 * Register REST routes.
 	 *
 	 * @return void
@@ -38,7 +68,7 @@ class DynamicContentController extends RestController {
 			array(
 				'methods'             => \WP_REST_Server::CREATABLE,
 				'callback'            => array( $this, 'preview_tag' ),
-				'permission_callback' => array( $this, 'require_edit_posts' ),
+				'permission_callback' => array( $this, 'can_preview_dynamic_content' ),
 				'args'                => array(
 					'tag'     => array(
 						'type'              => 'string',

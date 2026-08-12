@@ -42,6 +42,6 @@ class Slide extends BlockBase {
 			array( 'gb-slide' )
 		);
 
-		return sprintf( '<div class="%s">%s</div>', $classes, $content );
+		return sprintf( '<div class="%s">%s</div>', $classes, wp_kses_post( $content ) );
 	}
 }

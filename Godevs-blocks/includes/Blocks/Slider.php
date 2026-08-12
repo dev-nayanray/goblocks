@@ -221,7 +221,7 @@ class Slider extends BlockBase {
 			$pause_hover,
 			$trans_dur,
 			esc_attr( $trans_ease ),
-			$content,
+			wp_kses_post( $content ),
 			$arrows_html,
 			$dots_html,
 			$counter_html,

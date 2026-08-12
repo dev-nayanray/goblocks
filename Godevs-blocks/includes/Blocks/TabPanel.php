@@ -59,7 +59,7 @@ class TabPanel extends BlockBase {
 			esc_attr( $tab_id ),
 			$classes,
 			$active ? '' : ' hidden',
-			$content
+			wp_kses_post( $content )
 		);
 	}
 }
