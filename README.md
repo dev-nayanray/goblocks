@@ -9,12 +9,12 @@
 
 ## What is GoDevs Blocks?
 
-GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete block library built on a modern **CSS Custom Property design token system**. Every block is responsive across 7 breakpoints, outputs clean semantic HTML, and ships with zero inline styles. All styling is compiled to a single per-page CSS file served as a static asset.
+GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete block library built on a modern **CSS Custom Property design token system**. Every block is responsive across 6 breakpoints, outputs clean semantic HTML, and ships with zero inline styles. All styling is compiled to a single per-page CSS file served as a static asset.
 
 - **36 blocks** covering layout, content, interactive, media, and query use cases
 - **41 ready-made patterns** across 18 categories
-- **15 dynamic content tags** including post title, excerpt, date, meta fields, and more
-- **7 responsive breakpoints** with per-property control in the editor
+- **22 dynamic content tags** including post title, excerpt, date, meta fields, and more
+- **6 responsive breakpoints** (xs, sm, md, lg, xl, 2xl) with per-property control in the editor
 - **Zero jQuery**, vanilla JS only, zero frontend JS for non-interactive blocks
 - **Full FSE support** with block API v3, `block.json`, and Site Editor compatibility
 
@@ -67,7 +67,7 @@ GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete blo
 | **Progress Bar** | Animated progress bar with label and colour control |
 | **Alert** | Dismissible notice with info, success, warning, and error variants |
 | **Star Rating** | Static or dynamic star rating with half-star support |
-| **Social Share** | Share buttons for Twitter/X, Facebook, LinkedIn, WhatsApp, and more |
+| **Social Share** | Share buttons for Facebook, X (Twitter), LinkedIn, WhatsApp, Telegram, Reddit, Pinterest, Email, and copy-to-clipboard |
 | **Pricing** | Pricing card with plan name, price, feature list, and CTA button |
 | **Table of Contents** | Auto-generated TOC from heading blocks on the page |
 
@@ -121,7 +121,7 @@ All styling is driven by CSS Custom Properties with the `--gb-*` prefix. The edi
 
 - Responsive controls for every property (xs, sm, md, lg, xl, 2xl breakpoints)
 - Global color and typography presets in **GoDevs Blocks > Global Styles**
-- `theme.json` integration that reads and writes the WordPress global styles color palette
+- `theme.json` integration via `wp_theme_json_data_theme` that merges the GoDevs Blocks color palette into WordPress global styles
 - Dark mode and RTL support built in
 
 ### Performance
@@ -134,7 +134,7 @@ All styling is driven by CSS Custom Properties with the `--gb-*` prefix. The edi
 
 ### Accessibility
 
-- WCAG 2.1 AA compliant markup across all blocks
+- Markup follows WCAG 2.1 AA guidelines across all blocks
 - Full keyboard navigation for interactive blocks (Arrow keys, Home, End for Tabs)
 - Proper ARIA roles: `role="tablist"`, `role="tab"`, `role="tabpanel"`, `role="dialog"`
 - Semantic HTML with your choice of wrapper tag (div, section, article, aside)
@@ -142,11 +142,11 @@ All styling is driven by CSS Custom Properties with the `--gb-*` prefix. The edi
 
 ### Dynamic Content
 
-Use `{post_title}`, `{post_date|format:Y}`, or `{post_meta|key:_my_field}` in any Text or Heading block. 15 built-in tags with context awareness for single post, archive, and query loop. Extend with the `goblocks_register_dynamic_tags` hook.
+Use `{post_title}`, `{post_date|format:Y}`, or `{post_meta|key:_my_field}` in any Text or Heading block. 22 built-in tags with context awareness for single post, archive, and query loop. Extend with the `goblocks_register_dynamic_tags` hook.
 
 ### Pattern Library
 
-41 ready-made patterns across 18 categories including Hero, Features, Social Proof, Pricing, Stats, CTA, FAQ, Blog, Cards, Portfolio, Services, Team, About, Video, Newsletter, Contact, Logos, and Announcement. Browse them in **GoDevs Blocks > Patterns** or insert directly from the block editor.
+41 ready-made patterns across 18 categories including Hero, Features, Testimonials, Pricing, Stats, CTA, FAQ, Blog, Cards, Portfolio, Services, Team, About, Video, Newsletter, Contact, Logos, and Announcement. Browse them in **GoDevs Blocks > Patterns** or insert directly from the block editor.
 
 ## Links
 
