@@ -7,8 +7,6 @@
 ![License](https://img.shields.io/badge/License-GPLv2-green?style=flat-square)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square)
 
----
-
 ## What is GoDevs Blocks?
 
 GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete block library built on a modern **CSS Custom Property design token system**. Every block is responsive across 7 breakpoints, outputs clean semantic HTML, and ships with zero inline styles — all styling is compiled to a single per-page CSS file served as a static asset.
@@ -19,8 +17,6 @@ GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete blo
 - **7 responsive breakpoints** with per-property control in the editor
 - **Zero jQuery** — vanilla JS only, zero frontend JS for non-interactive blocks
 - **Full FSE support** — block API v3, `block.json`, Site Editor compatible
-
----
 
 ## Blocks
 
@@ -88,8 +84,6 @@ GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete blo
 | **Timeline** | Vertical or horizontal timeline container |
 | **Timeline Item** | Individual entry with date, title, body, icon, and colour |
 
----
-
 ## Requirements
 
 | | Minimum |
@@ -97,8 +91,6 @@ GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete blo
 | WordPress | 6.5 |
 | PHP | 8.0 |
 | Browser | Chrome, Firefox, Safari, Edge (latest 2 versions) |
-
----
 
 ## Installation
 
@@ -120,8 +112,6 @@ GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete blo
 - Visit **GoDevs Blocks → Global Styles** to configure your color palette and typography
 - Visit **GoDevs Blocks → Settings** to adjust breakpoints and CSS output method
 - Visit **GoDevs Blocks → Patterns** to browse all 41 ready-made patterns
-
----
 
 ## Features
 
@@ -158,15 +148,11 @@ Use `{post_title}`, `{post_date|format:Y}`, or `{post_meta|key:_my_field}` in an
 
 41 ready-made patterns across 18 categories — Hero, Features, Social Proof, Pricing, Stats, CTA, FAQ, Blog, Cards, Portfolio, Services, Team, About, Video, Newsletter, Contact, Logos, Announcement. Browsable in **GoDevs Blocks → Patterns** and available directly in the block editor inserter.
 
----
-
 ## Links
 
 - [WordPress.org Plugin Page](https://wordpress.org/plugins/godevs-blocks/)
 - [Support Forum](https://wordpress.org/support/plugin/godevs-blocks/)
 - [GoDevs Website](https://godevs.net/godevs-blocks)
-
----
 
 ## License
 
