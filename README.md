@@ -98,8 +98,6 @@ GoDevs Blocks extends the WordPress block editor (Gutenberg) with a complete blo
 | PHP | 8.0 |
 | Browser | Chrome, Firefox, Safari, Edge (latest 2 versions) |
 
-> **End users do not need Node.js, npm, or any build tools.** The compiled `build/` directory is included in every plugin release ZIP.
-
 ---
 
 ## Installation
@@ -159,88 +157,6 @@ Use `{post_title}`, `{post_date|format:Y}`, or `{post_meta|key:_my_field}` in an
 ### Pattern Library
 
 41 ready-made patterns across 18 categories — Hero, Features, Social Proof, Pricing, Stats, CTA, FAQ, Blog, Cards, Portfolio, Services, Team, About, Video, Newsletter, Contact, Logos, Announcement. Browsable in **GoDevs Blocks → Patterns** and available directly in the block editor inserter.
-
----
-
-## For Developers
-
-> These steps are **only needed if you want to modify the block source code**. End users installing the plugin do not need Node.js or npm.
-
-### Prerequisites
-
-- Node.js 18+
-- npm 9+
-
-### Local Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/godevsltd/godevsblocks.git
-cd godevsblocks
-
-# Install dependencies
-npm install
-
-# Start development mode (watch + hot reload)
-npm run start
-
-# Build for production
-npm run build
-```
-
-### Project Structure
-
-```
-godevsblocks/
-├── src/                  # TypeScript + SCSS source files
-│   ├── blocks/           # One directory per block
-│   ├── components/       # Shared editor components
-│   ├── store/            # Zustand editor state
-│   └── utils/            # Shared utilities
-├── build/                # Compiled output (committed, included in ZIP)
-├── includes/             # PHP classes (PSR-4, GoBlocks\ namespace)
-│   ├── Blocks/           # Block render callbacks
-│   ├── REST/             # REST API controllers
-│   ├── CSS/              # CSS generation and caching
-│   └── Core/             # Plugin bootstrap
-├── patterns/             # Block pattern PHP files
-├── languages/            # i18n .pot and translation files
-├── assets/               # Plugin icons, banners, screenshots
-├── goblocks.php          # Plugin entry point
-└── readme.txt            # WordPress.org readme
-```
-
-### PHP Standards
-
-```bash
-# Install Composer dependencies (dev)
-composer install
-
-# Run PHP CodeSniffer (WordPress Coding Standards)
-composer run phpcs
-
-# Run PHPStan (level 8)
-composer run phpstan
-```
-
-### Extending GoDevs Blocks
-
-**Register a custom dynamic content tag:**
-
-```php
-add_action( 'goblocks_register_dynamic_tags', function( $registry ) {
-    $registry->register( new My_Custom_Tag() );
-} );
-```
-
-**Hook into CSS generation:**
-
-```php
-add_filter( 'goblocks_block_css', function( $css, $block_name, $attributes ) {
-    // Modify or append CSS for a specific block
-    return $css;
-}, 10, 3 );
-```
 
 ---
 
