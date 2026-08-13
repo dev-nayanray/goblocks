@@ -8,41 +8,79 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight, responsive block library for the WordPress block editor with full FSE support, dynamic content, and a real design token system.
+36 production-ready Gutenberg blocks with a real CSS design token system, 41 patterns, dynamic content tags, and full FSE support. Zero jQuery.
 
 == Description ==
 
-GoDevs Blocks is a free WordPress block plugin that extends the Gutenberg editor with
-36 production-ready blocks built on a modern CSS Custom Property design token
-system. Every block is responsive across 7 breakpoints, outputs clean semantic
-HTML, and ships with zero inline styles — all styling is compiled to a single
-per-page CSS file served as a static asset.
+GoDevs Blocks extends the WordPress block editor with a complete block library built on a modern CSS Custom Property design token system. Every block is responsive across 7 breakpoints, outputs clean semantic HTML, and ships with zero inline styles.
 
-= Core Blocks =
+**36 Blocks &bull; 41 Patterns &bull; 7 Breakpoints &bull; Zero jQuery**
 
-* **Box** — Universal layout container with full flex and CSS grid support, link mode, animation classes, and custom HTML attributes
-* **Text** — Rich text block for paragraphs, captions, labels, and dynamic content
-* **Heading** — Semantic headings (h1–h6) with full typography control and dynamic content support
-* **Button** — CTA button or anchor link with full styling and ARIA support
-* **Image** — Responsive image with dynamic content source, link wrapping, and caption
-* **Grid** — Powerful CSS grid layout system with responsive column control
-* **Query** — Visual post query builder — filter by type, taxonomy, author, date, and more
-* **Query Loop** — Loop template rendered inside the Query block
-* **Pagination** — Standard, load-more, and infinite scroll pagination modes
-* **Icon** — SVG icon block with stroke/fill control and size responsiveness
+= All 36 Blocks =
+
+**Layout**
+
+* **Group** — Flexible section wrapper with flex/grid layout, link mode, animation classes, and full tag control (div, section, article, aside...)
+* **Column** — Flex column for multi-column layouts with responsive width per breakpoint
+* **Container** — Centered, max-width-constrained content wrapper
+
+**Content**
+
+* **Text** — Rich text block with dynamic content tag support
+* **Heading** — Semantic headings (h1–h6) with dynamic content and full typography control
+* **Button** — CTA button or anchor link with full ARIA support
+* **Image** — Responsive image with dynamic source, link wrapping, and caption
+* **Icon** — SVG icon picker with 112 icons, stroke/fill control, and size responsiveness
 * **Shape** — Decorative SVG shape dividers for section transitions
 * **Separator** — Styled horizontal rule with width, height, and colour control
 * **Spacer** — Fixed-height vertical spacer with responsive height per breakpoint
-* **Tabs** — ARIA-compliant tabbed content panels with keyboard navigation
-* **Accordion** — Native `<details>/<summary>` accordion with FAQ schema.org markup support
-* **Query No Results** — Customisable fallback content shown when a Query block returns zero posts
 
-= Design System Features =
+**Interactive**
+
+* **Tabs** — ARIA-compliant tabbed content panels with keyboard navigation (Arrow, Home, End)
+* **Tab Panel** — Individual tab panel template block
+* **Accordion** — Native `<details>/<summary>` accordion with optional FAQ schema.org markup
+* **Accordion Item** — Individual accordion item with open/close state
+* **Slider** — Touch-enabled content slider with autoplay, loop, arrows, dots, and progress bar
+* **Slide** — Individual slide template block
+* **Modal** — Accessible dialog with trigger button, close button, and backdrop
+* **Flip Card** — CSS-animated front/back flip card with custom content on each face
+* **Countdown** — Live countdown timer with days, hours, minutes, seconds display
+
+**Query & Posts**
+
+* **Query** — Visual post query builder — filter by type, taxonomy, author, date, and more
+* **Query Loop** — Loop template rendered for each post inside the Query block
+* **Query No Results** — Customisable fallback content shown when zero posts are found
+* **Pagination** — Standard, load-more, and infinite scroll pagination modes
+
+**Widgets & UI**
+
+* **Counter** — Animated number counter with start value, end value, and duration
+* **Progress Bar** — Animated progress bar with percentage label and colour control
+* **Alert** — Dismissible alert/notice block with info, success, warning, and error variants
+* **Star Rating** — Static or dynamic star rating display with half-star support
+* **Social Share** — Share buttons for Twitter/X, Facebook, LinkedIn, WhatsApp, and more
+* **Pricing** — Pricing card with plan name, price, feature list, and CTA button
+* **Table of Contents** — Auto-generated TOC from heading blocks on the page
+
+**Media**
+
+* **Lottie** — Lottie JSON animation player with autoplay, loop, and speed control
+* **Video** — Self-hosted or YouTube/Vimeo video embed with poster image
+
+**Structure**
+
+* **Navigation** — Site navigation menu rendered as accessible `<nav>` with walker support
+* **Timeline** — Vertical or horizontal timeline container
+* **Timeline Item** — Individual timeline entry with date, title, body, icon, and colour
+
+= Design System =
 
 * Full CSS Custom Property design token system (`--gb-*` prefix)
-* Responsive controls for every property (6 breakpoints: xs, sm, md, lg, xl, 2xl)
-* Global color and typography presets managed in the **GoDevs Blocks → Global Styles** panel
-* Theme.json integration — reads and writes to WordPress global styles color palette
+* Responsive controls for every property across 6 breakpoints (xs, sm, md, lg, xl, 2xl)
+* Global color and typography presets managed in **GoDevs Blocks → Global Styles**
+* `theme.json` integration — reads and writes to WordPress global styles color palette
 * Dark mode support via CSS custom properties
 * RTL language support with automatic CSS flip
 
@@ -57,10 +95,10 @@ per-page CSS file served as a static asset.
 = Accessibility =
 
 * WCAG 2.1 AA compliant markup
-* Keyboard navigation for all interactive blocks (Tabs: Arrow keys, Home, End)
+* Full keyboard navigation for all interactive blocks (Tabs: Arrow keys, Home, End)
 * Proper ARIA roles and attributes (`role="tablist"`, `role="tab"`, `role="tabpanel"`, etc.)
-* Semantic HTML output — choose your own wrapper tag (div, section, article, aside…)
-* FAQ block content ships with schema.org/FAQPage structured data
+* Semantic HTML output — choose your own wrapper tag
+* FAQ Accordion ships with schema.org/FAQPage structured data
 
 = Dynamic Content =
 
@@ -71,16 +109,17 @@ per-page CSS file served as a static asset.
 
 = Pattern Library =
 
-* 41 built-in block patterns across 18 categories: Hero (4), Features (4), Social Proof (5), Pricing (2), Stats (3), CTA (4), FAQ (2), Blog (3), Cards (2), Portfolio (2), Services (1), Team (2), About (1), Video (1), Newsletter (2), Contact (3), Logos (2), Announcement (1)
-* Pattern browser in **GoDevs Blocks → Patterns** admin page
+* 41 ready-made block patterns across 18 categories
+* Hero (4), Features (4), Social Proof (5), Pricing (2), Stats (3), CTA (4), FAQ (2), Blog (3), Cards (2), Portfolio (2), Services (1), Team (2), About (1), Video (1), Newsletter (2), Contact (3), Logos (2), Announcement (1)
+* Searchable pattern browser in **GoDevs Blocks → Patterns**
 * All patterns available in the block editor pattern inserter
 
-= Developer Friendly =
+= For Developers =
 
 * TypeScript throughout — strict mode, no `any`
 * Zustand for editor state (no Redux boilerplate)
 * Fully extensible via WordPress hooks and filters
-* PSR-4 PHP, WordPress Coding Standards compliant
+* PSR-4 PHP autoloader, WordPress Coding Standards compliant
 * PHPStan level 8 compliant
 * REST API for settings, styles, queries, dynamic content, and patterns
 
@@ -88,21 +127,21 @@ per-page CSS file served as a static asset.
 
 * [Plugin Page](https://godevs.net/godevs-blocks)
 * [Support Forum](https://wordpress.org/support/plugin/godevs-blocks)
-* [Source Code (GitHub)](https://github.com/godevsltd/godevsblocks)
+* [Source Code on GitHub](https://github.com/godevsltd/godevsblocks)
 
 = Source Code & Build =
 
-The complete, human-readable source code for this plugin — including all TypeScript block source files, SCSS, and build configuration — is publicly available at:
+The complete source code — TypeScript block files, build configuration, and all development tooling — is publicly available on GitHub:
 
-**https://github.com/godevsltd/godevsblocks**
+https://github.com/godevsltd/godevsblocks
 
-The `build/` directory in the plugin ZIP contains compiled assets generated from the `src/` directory. To regenerate them:
+The `build/` directory in the plugin ZIP is compiled from the `src/` directory using `@wordpress/scripts` (webpack). To regenerate the build:
 
-1. Clone the repository: `git clone https://github.com/godevsltd/godevsblocks.git`
-2. Install Node.js dependencies: `npm install`
+1. Clone the repo: `git clone https://github.com/godevsltd/godevsblocks.git`
+2. Install dependencies: `npm install`
 3. Build for production: `npm run build`
 
-Build tool: `@wordpress/scripts` (webpack-based). Node.js 18+ and npm 9+ required.
+Requires Node.js 18+ and npm 9+.
 
 == Installation ==
 
@@ -110,8 +149,8 @@ Build tool: `@wordpress/scripts` (webpack-based). Node.js 18+ and npm 9+ require
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Open any post or page in the block editor.
 4. Find GoDevs Blocks in the block inserter under the **GoDevs Blocks** category.
-5. (Optional) Visit **GoDevs Blocks → Global Styles** to set up your color palette and typography presets.
-6. (Optional) Visit **GoDevs Blocks → Settings** to configure breakpoints, CSS output method, and other options.
+5. (Optional) Visit **GoDevs Blocks → Global Styles** to configure your color palette and typography presets.
+6. (Optional) Visit **GoDevs Blocks → Settings** to adjust breakpoints, CSS output method, and other options.
 
 **Requirements:**
 
@@ -123,64 +162,41 @@ Build tool: `@wordpress/scripts` (webpack-based). Node.js 18+ and npm 9+ require
 
 = Does GoDevs Blocks work with my theme? =
 
-Yes. GoDevs Blocks works with any WordPress theme — FSE (Full Site Editing) themes,
-classic themes, and hybrid themes. It uses CSS custom properties that integrate
-with your theme's existing design system without overriding it.
+Yes. GoDevs Blocks works with any WordPress theme — FSE themes, classic themes, and hybrid themes. It uses CSS custom properties that integrate with your theme's existing design system without overriding it.
 
 = Does GoDevs Blocks work with Full Site Editing? =
 
-Yes. All GoDevs Blocks blocks use block API v3 with full `block.json` registration,
-making them fully compatible with the Site Editor. GoDevs Blocks also integrates with
-`theme.json` via the `wp_theme_json_data_theme` filter to share color palettes
-with the global styles system.
+Yes. All blocks use block API v3 with full `block.json` registration, making them fully compatible with the Site Editor. GoDevs Blocks also integrates with `theme.json` via the `wp_theme_json_data_theme` filter to share color palettes with the global styles system.
 
 = Does GoDevs Blocks work with WordPress Multisite? =
 
-Yes. GoDevs Blocks is multisite-compatible. Each site in a network has its own CSS
-cache directory, its own settings, and its own global styles — fully isolated.
+Yes. GoDevs Blocks is multisite-compatible. Each site in a network has its own CSS cache directory, its own settings, and its own global styles — fully isolated.
 
 = Will GoDevs Blocks slow down my site? =
 
-No. GoDevs Blocks generates a single CSS file per page, served as a static file from
-your uploads directory with standard browser caching. There is zero frontend
-JavaScript for all layout, text, heading, image, and icon blocks. Interactive
-blocks (Tabs, Accordion) use tiny vanilla JS IIFE scripts (~500 bytes each) that
-are only loaded when the block is present on the page.
+No. GoDevs Blocks generates a single CSS file per page, served as a static file from your uploads directory with standard browser caching. There is zero frontend JavaScript for all layout, text, heading, image, and icon blocks. Interactive blocks (Tabs, Accordion) use tiny vanilla JS scripts (~500 bytes each) that are only loaded when the block is present on the page.
 
 = How do I use dynamic content? =
 
-Use the dynamic tag syntax `{post_title}`, `{post_date|format:Y}`, or
-`{post_meta|key:_my_field}` in any text or heading block. Click the **Dynamic
-Content** button in the block toolbar to browse all available tags. Tags are also
-supported in image `src`, `alt`, and HTML attributes.
+Use the tag syntax `{post_title}`, `{post_date|format:Y}`, or `{post_meta|key:_my_field}` in any Text or Heading block. Click the **Dynamic Content** button in the block toolbar to browse all available tags. Tags are also supported in image `src`, `alt`, and custom HTML attributes.
 
 = Can I create custom dynamic tags? =
 
 Yes. Implement the `GoBlocks\DynamicContent\TagInterface` and register your tag:
 
-```php
-add_action( 'goblocks_register_dynamic_tags', function( $registry ) {
-    $registry->register( new My_Custom_Tag() );
-} );
-```
+`add_action( 'goblocks_register_dynamic_tags', function( $registry ) { $registry->register( new My_Custom_Tag() ); } );`
 
 = Does GoDevs Blocks generate bloated HTML? =
 
-No. GoDevs Blocks outputs minimal semantic HTML. There are no wrapper divs, no
-data-attributes on most elements, and no inline styles. All styling is done
-through CSS custom properties scoped to the block's unique class.
+No. GoDevs Blocks outputs minimal semantic HTML. There are no wrapper divs, no data-attributes on most elements, and no inline styles. All styling is done through CSS custom properties scoped to the block's unique class.
 
 = What is the CSS output method? =
 
-By default, GoDevs Blocks writes a single CSS file per page to `wp-content/uploads/goblocks/`
-and serves it with a `<link>` tag. This can be changed to inline `<style>` output
-in **GoDevs Blocks → Settings → CSS Print Method**.
+By default, GoDevs Blocks writes a single CSS file per page to `wp-content/uploads/goblocks/` and serves it with a `<link>` tag. This can be switched to inline `<style>` output in **GoDevs Blocks → Settings → CSS Print Method**.
 
-= How do I add the FAQ schema markup to my accordion? =
+= How do I add FAQ schema markup to the Accordion? =
 
-Select your Accordion block, open the Inspector panel, and toggle **Enable FAQ
-Schema**. GoDevs Blocks will automatically add `schema.org/FAQPage`, `Question`, and
-`Answer` structured data to the rendered HTML.
+Select your Accordion block, open the Inspector panel, and toggle **Enable FAQ Schema**. GoDevs Blocks automatically adds `schema.org/FAQPage`, `Question`, and `Answer` structured data to the rendered HTML.
 
 == Screenshots ==
 
