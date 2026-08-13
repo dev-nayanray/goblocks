@@ -158,4 +158,4 @@ Use `{post_title}`, `{post_date|format:Y}`, or `{post_meta|key:_my_field}` in an
 
 GoDevs Blocks is free software released under the [GNU General Public License v2](https://www.gnu.org/licenses/gpl-2.0.html) or later.
 
-&copy; 2024 [GoDevs](https://godevs.net)
+&copy; 2026 [GoDevs](https://godevs.net)
